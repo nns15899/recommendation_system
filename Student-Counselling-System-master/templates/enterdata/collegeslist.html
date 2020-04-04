@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Colleges List</title>
+{% endblock %}
+{% block body %}
+{% load static %}
+<div class="container-fluid">
+  <br>
+  <h2>Colleges List</h2>
+<table class="table table-striped" style="margin-top:20px;">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">College Name</th>
+        <th scope="col">JEE Mains Cutoff</th>
+        <th scope="col">JEE Advance Cutoff</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in dict %}
+      <tr>
+        {% for j in i %}
+        <td>{{ j }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>  
+{% endblock%}

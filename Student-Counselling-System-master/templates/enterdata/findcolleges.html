@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Find Colleges</title>
+{% endblock %}
+{% block body %}
+{% load static %}
+<div class="container-fluid" style="margin:20px;">
+    <h2>Enter your Data</h2>
+    <br>
+    <form name="findform" action="find" method="POST">
+        {% csrf_token %}
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="name">Student Name</label>
+                    <input type="text" name="name" class="form-control mx-sm-3" placeholder="Student Name" required>
+                </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="jeemains">JEE Mains Marks</label>
+                        <input type="text" name="jeemains" class="form-control mx-sm-3" placeholder="JEE Mains Marks" required>
+                    </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="jeeadvance">JEE Advance Marks</label>
+                        <input type="text" name="jeeadvance" class="form-control mx-sm-3" placeholder="JEE Advanced Marks" required>
+                    </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="csepref">Preference for CSE(Computer Science Engineering)</label>
+                        <select class="form-control" id="csepref" name="csepref">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="ecepref">Preference for ECE(Electronics and Communication Engineering)</label>
+                        <select class="form-control" id="ecepref" name="ecepref">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="eepref">Preference for EE(Electrical Engineering)</label>
+                        <select class="form-control" id="eepref" name="eepref">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="mepref">Preference for ME(Mechanical Engineering)</label>
+                        <select class="form-control" id="mepref" name="mepref">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="itpref">Preference for IT(Information Technology Engineering)</label>
+                        <select class="form-control" id="itpref" name="itpref">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="cepref">Preference for CE(Civil Engineering)</label>
+                        <select class="form-control" id="cepref" name="cepref">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="chepref">Preference for CHE(Chemical Engineering)</label>
+                        <select class="form-control" id="chepref" name="chepref">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="anepref">Preference for ANE(Aeronautical Engineering)</label>
+                        <select class="form-control" id="anepref" name="anepref">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="agrpref">Preference for AGR(Agricultural Engineering)</label>
+                        <select class="form-control" id="agrpref" name="agrpref">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="btpref">Preference for BT(Bio-Technology Engineering)</label>
+                        <select class="form-control" id="btpref" name="btpref">
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                        </select>
+                    </div>
+            </div>
+            <div class="form-row" style="text-align:center;">
+                    <div class="col-md-4 mb-3">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+            </div>
+    </form>
+</div>
+{% endblock%}
