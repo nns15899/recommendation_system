@@ -1,4 +1,5 @@
 from tkinter import*
+from tkinter import messagebox
 import tkinter.messagebox
 import cv2
 import PIL.Image, PIL.ImageTk
@@ -38,7 +39,7 @@ B5 = "Civil Engineering"
 
 
 def save_info():
-    tkinter.messagebox.showinfo('Registration Completed!', 'You Have Been Registered Successfully! Please check your mobile number for seat allotment.')
+    
     firstname_info = firstname.get()
     lastname_info = lastname.get()  
     rollno_info = rollno.get()    
@@ -56,8 +57,12 @@ def save_info():
     branchchoice2_info = var5.get()
     collegechoice3_info = var3.get()
     branchchoice3_info = var6.get()
+    messagebox.showinfo('Registration Completed!', 'You Have Been Registered Successfully! Please check your mobile number for seat allotment.')
     print(firstname_info, lastname_info, rollno_info, email_info, phoneno_info, jeemarks_info, boardper_info, collegechoice1_info,
           branchchoice1_info, collegechoice2_info, branchchoice2_info, collegechoice3_info, branchchoice3_info)
+    
+    messagebox.showinfo(title = "Summary",message="{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12}".format(firstname_info, lastname_info, rollno_info, email_info, phoneno_info, jeemarks_info, boardper_info, collegechoice1_info,
+          branchchoice1_info, collegechoice2_info, branchchoice2_info, collegechoice3_info, branchchoice3_info))
     
     conn.execute("insert into students(fname, lname, rollno, marks, email, phoneno, collegechoice1, branchchoice1, collegechoice2, branchchoice2, collegechoice3, branchchoice3) \
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",(firstname_info, lastname_info, rollno_info, jeemarks_info+(boardper_info/100), email_info, phoneno_info, collegechoice1_info, branchchoice1_info, collegechoice2_info, branchchoice2_info, collegechoice3_info, branchchoice3_info))
