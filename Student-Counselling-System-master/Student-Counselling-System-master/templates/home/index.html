@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Home Page</title>
+{% endblock %}
+
+{% block body %}
+{% load static %}
+<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">Student Counselling System</h1>
+          <p class="lead">A portal to select the right college.</p>
+        </div>
+</div>
+
+<div class="container-fluid" style="padding-bottom:50px;">
+        <div class="card" style="width: 30%;float: left;padding: 10px;margin: 10px;">
+                <img class="card-img-top" src="{% static 'img/univ1.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Colleges List</h5>
+                  <p class="card-text">Go through the list of the colleges to find one that suits you.</p>
+                  <a href="colleges/listcolleges" class="btn btn-primary">Check out Colleges</a>
+                </div>
+        </div>
+        <div class="card" style="width: 30%;float:left;padding: 10px;margin: 10px;">
+                    <img class="card-img-top" src="{% static 'img/findcollege.jpeg' %}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">Find Colleges</h5>
+                      <p class="card-text">Find college according to your preferences.</p>
+                      <a href="colleges/find" class="btn btn-primary">Find College</a>
+                    </div>
+        </div>
+        
+
+
+</div>
+
+   
+
+{% endblock %}
