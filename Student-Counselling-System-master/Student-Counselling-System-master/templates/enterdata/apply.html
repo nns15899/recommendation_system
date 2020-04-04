@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Apply</title>
+{% endblock %}
+
+{% block body %}
+{% load static %}
+<div class="container-fluid">
+    <br>
+        <h2>Apply for college</h2>
+        <br>
+        <form name="applyform" action="apply" method="POST">
+              {% csrf_token %}
+              <div class="form-row">
+                      <div class="col-md-4 mb-3">
+                          <label for="studentname">Student Name</label>
+                        <input type="text" name="studentname" class="form-control mx-sm-3" placeholder="Student Name" value="{{ name }}">
+                      </div>
+              </div>
+        <div class="form-row">
+              <div class="col-md-4 mb-3">
+                  <label for="selectclg">Select College</label>
+                  <select class="form-control" id="selectclg" name="selectclg">
+                          {% for x in clgnames %}
+                          <option>{{ x }}</option>
+                          {% endfor %}
+                          
+                  </select>
+              </div>
+          </div>
+          <div class="form-row" style="text-align:center;">
+                  <div class="col-md-4 mb-3">
+                      <input type="submit" value="Submit" class="btn btn-primary">
+                  </div>
+          </div>
+          </form>
+          <h2>Recommended Colleges</h2>
+          <table class="table table-striped" style="margin-top:20px;">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">College Name</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                  
+                  {% for i in recommended_clgs %}
+                <tr>
+                  <td>{{ i }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+
+    <br>
+    <br>
+    <h2>All Available Colleges</h2>
+        <table class="table table-striped" style="margin-top:20px;">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">College Name</th>
+                <th scope="col">JEE Mains Cutoff</th>
+                <th scope="col">JEE Advanced Cutoff</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                
+                {% for i in avail_dict %}
+              <tr>
+                
+                {% for j in i %}
+                <td>{{ j }}</td>
+                {% endfor %}
+                
+                
+              </tr>
+              
+              {% endfor %}
+            </tbody>
+          </table>
+
+          
+</div>  
+{% endblock%} 
