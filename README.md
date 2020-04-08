@@ -1,2 +1,0 @@
-# recommendation_system
-counselling_project
