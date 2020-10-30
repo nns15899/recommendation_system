@@ -102,7 +102,7 @@ cv_img = cv2.imread("Counselling.jpg")
 cv_img = cv2.cvtColor(cv2.imread("Counselling.jpg"), cv2.COLOR_BGR2RGB)
 height, width, no_channels = cv_img.shape
 canvas = tkinter.Canvas(screen, width = width, height = height)
-canvas.place(x=1100, y=40)
+canvas.place(x=1100, y=50)
 photo = PIL.ImageTk.PhotoImage(image = PIL.Image.fromarray(cv_img))
 canvas.create_image(0, 0, image=photo, anchor=tkinter.NW)
 
